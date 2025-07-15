@@ -41,8 +41,10 @@ function App(){
                     <br></br>
                     <button>Login with Spotify</button>
                     <input type='file' id='audioFile' accept='audio/*'></input>
+                    {/* may need to rewrite the play and pause function */}
                     <button onClick={"play()"}>Play</button>
                     <button onClick={"pause()"}>Pause</button>
+                    <button onClick={getTopTracks}>Get My Top Tracks</button>
                 </a>
             ) : (
                 <p>Logged in! Token: {token.substring(0,10)}... </p>
@@ -50,6 +52,18 @@ function App(){
         </div>
     );
 }
+
+// function will call the api after auth is verified
+const getTopTracks= async()=>{
+  const res= await axios.get("https://api.spotify.com/v1/me/top/tracks", {
+    headers:{
+      Authorization: `Bearer ${token}`
+    }
+  });
+  // console to list the top tracks
+  console.log(res.data.items); 
+};
+
 
 
 export default App;
