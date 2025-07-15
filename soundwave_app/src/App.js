@@ -51,6 +51,7 @@ function App(){
                   <h1>Upload a Song or Login with Spoify</h1>
                     <canvas id='soundwaveCanvas' width={800} height={400}></canvas>
                     <br></br>
+                    {/* check code her */}
                   <a href={authEndpoint}>
                     <button>Login with Spotify</button>
                   </a>
