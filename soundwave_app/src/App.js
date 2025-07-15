@@ -8,7 +8,7 @@ import './App.css';
 
 import React, {useEffect, useState} from "react";
 import { authEndpoint } from "./authentication";
-
+import axios from "axios";
 
 // function will parse through the users spotify information
 function App(){
@@ -57,7 +57,7 @@ function App(){
 const getTopTracks= async()=>{
   const res= await axios.get("https://api.spotify.com/v1/me/top/tracks", {
     headers:{
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${_token}`
     }
   });
   // console to list the top tracks
