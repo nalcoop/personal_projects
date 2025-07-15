@@ -6,7 +6,6 @@ import { authEndpoint } from "./authentication";
 import axios from "axious";
 
 // function will parse through the users spotify information
-// then the function will fetch the data from spotify 
 function App(){
     const [token,setToken] = useState("");
 
@@ -27,4 +26,16 @@ function App(){
 
         setToken(_token);
     }, []);
+
+    return (
+        <div>
+            {!token ? (
+                <a href={authEndpoint}>
+                    <button>Login with Spotify</button>
+                </a>
+            ) : (
+                <p>Logged in! Token: {token.substring(0,10)}... </p>
+            )}
+        </div>
+    );
 }
