@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+#soundwaveCanvas{
+    display: block;
+    margin:auto;
+    background: #111;
+}
+body{
+    background: black;
+    color: white;
+    text-align: center;
+}
